@@ -26,4 +26,4 @@ def jsonMaker():
     with open('Markers.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
-    print("JSON 파일이 저장되었습니다.")
+    print("Completed saving JSON file.")
