@@ -12,7 +12,9 @@ def csvConverter():
         df = pd.read_csv('Seoul_vet.csv', encoding='EUC-KR')
 
     # '상세영업상태코드'가 '0000'인 행만 추출
-    ## filtered_df = df[df['상세영업상태코드'] == 0000]
+    filtered_df = df[df['상세영업상태코드'] == 0000]
 
     # 결과를 엑셀 파일로 저장
     df.to_excel('Seoul_vet.xlsx', index=False)
+
+    print('Completed csv to xlsx.')

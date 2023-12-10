@@ -26,10 +26,10 @@ def geoCodeGen():
 
         #### 테스트시 여기서 횟수 조절
         if index > 10:
-            continue
+            break;
         subAddress = row['도로명주소']
         address = subAddress
-        print(address)
+        print('processing... ' + address)
         if address is not None:
             latitude, longitude = get_geocode(address, api_key)
             df.at[index, 'latitude'] = latitude
@@ -40,3 +40,4 @@ def geoCodeGen():
         
     # 변경된 데이터프레임을 엑셀 파일로 저장
     df.to_excel('Seoul_vet_Coor.xlsx', index=False)  # 원하는 파일 경로로 변경하세요.
+    print('Completed generating geo code.')
